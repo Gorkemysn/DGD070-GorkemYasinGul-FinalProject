@@ -19,24 +19,25 @@ public class PadView : EntityView
         _renderer.material.color = originalColor;
     }
 
-    void Update()
+    public new void Update()
     {
         base.Update();
 
         if (_entity != null && _entity.isTriggered)
         {
-            if (GameManager.Instance.CanTriggerPad(originalColor)) // Sadece doðru sýradaysa tetikle
+            if (GameManager.Instance.CanTriggerPad(originalColor))
             {
                 _renderer.material.color = Color.green;
-                GameManager.Instance.AdvanceToNextColor(); // Sýradaki renge geç
-                _entity.isTriggered = false; // Pad'i tekrar tetiklemeyi engelle
+                GameManager.Instance.AdvanceToNextColor();
+                _entity.isTriggered = false;
             }
             else
             {
-                _entity.isTriggered = false; // Yanlýþ pad tetiklendiyse engelle
+                _entity.isTriggered = false;
             }
         }
     }
+
 
     public void SetColor(Color color)
     {
