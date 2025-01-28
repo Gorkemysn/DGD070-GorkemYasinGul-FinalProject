@@ -25,10 +25,15 @@ public class PadView : EntityView
 
         if (_entity != null && _entity.isTriggered)
         {
-            if (GameManager.Instance.CanTriggerPad(originalColor)) // Doðru pad mi kontrol et
+            if (GameManager.Instance.CanTriggerPad(originalColor)) // Sadece doðru sýradaysa tetikle
             {
                 _renderer.material.color = Color.green;
                 GameManager.Instance.AdvanceToNextColor(); // Sýradaki renge geç
+                _entity.isTriggered = false; // Pad'i tekrar tetiklemeyi engelle
+            }
+            else
+            {
+                _entity.isTriggered = false; // Yanlýþ pad tetiklendiyse engelle
             }
         }
     }

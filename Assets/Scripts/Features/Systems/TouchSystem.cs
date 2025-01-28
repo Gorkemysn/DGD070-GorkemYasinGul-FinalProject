@@ -27,7 +27,6 @@ public class TouchSystem : IExecuteSystem
             if (!pad.isTriggered && Vector3.Distance(playerPosition, pad.position.position) < TriggerRadius)
             {
                 pad.isTriggered = true;
-                Debug.Log("Pad activated!");
             }
         }
     }

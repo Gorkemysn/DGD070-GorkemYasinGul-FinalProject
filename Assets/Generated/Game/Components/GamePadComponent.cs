@@ -7,6 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 public partial class GameEntity {
+    internal object view;
 
     public PadComponent pad { get { return (PadComponent)GetComponent(GameComponentsLookup.Pad); } }
     public bool hasPad { get { return HasComponent(GameComponentsLookup.Pad); } }

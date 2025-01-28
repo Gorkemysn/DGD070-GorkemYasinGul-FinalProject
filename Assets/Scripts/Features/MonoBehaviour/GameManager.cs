@@ -1,7 +1,6 @@
 using UnityEngine;
 using Entitas;
 using TMPro;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -65,7 +64,8 @@ public class GameManager : MonoBehaviour
 
     public bool CanTriggerPad(Color padColor)
     {
-        return padColor == targetColors[currentTargetIndex]; // Doðru renkte mi?
+        // Sadece sýradaki pad basýlabilir
+        return padColor == targetColors[currentTargetIndex];
     }
 
     public void AdvanceToNextColor()
